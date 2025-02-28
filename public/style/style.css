@@ -1,0 +1,266 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    height: auto;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.modal {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 700px;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    background-color: #2ecc71;
+    border-radius: 50%;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 18px;
+    color: #999;
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.orb {
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(circle at 30% 30%, #50e991, #25a55f);
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(37, 165, 95, 0.3);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.orb.pulsing {
+    animation: pulse 1.5s infinite;
+}
+
+.orb.processing {
+    animation: spin 2s infinite linear;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.main-question {
+    text-align: center;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.suggestion-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.suggestion-btn {
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.suggestion-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.show-more {
+    text-align: right;
+    color: #999;
+    font-size: 14px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.input-area {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.input-box {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+}
+
+.input-box::placeholder {
+    color: #aaa;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.topics-btn {
+    display: flex;
+    align-items: center;
+    color: #2ecc71;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.topics-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    background-color: #2ecc71;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.upload-btn {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.hidden {
+    display: none;
+}
+
+.file-input {
+    display: none;
+}
+
+.summary-container {
+    /* height: 200px; */
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    /* overflow: scroll; */
+    /* display: none; */
+}
+
+.summary-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.summary-text {
+    line-height: 1.5;
+    color: #555;
+}
+
+.more-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    display: none;
+}
+
+.action-btn {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.file-name {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    text-align: center;
+    display: none;
+}
+
+.additional-buttons {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.additional-buttons.show {
+    max-height: 200px;
+}

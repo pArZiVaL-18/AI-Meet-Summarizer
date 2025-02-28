@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/style/style.css" />
+        <title>AI Audio Summarizer</title>
+    </head>
+    <body>
+        <div class="modal">
+            <div class="modal-header">
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    <div class="title">AI Meeting Summarizer</div>
+                </div>
+                <div class="close-btn">×</div>
+            </div>
+
+            <div class="center-content">
+                <div class="orb" id="orb"></div>
+                <div class="main-question" id="main-prompt">
+                    Upload an audio file<br />
+                    to get detailed summary
+                </div>
+                <div class="file-name" id="fileName"></div>
+            </div>
+
+            <div class="suggestion-buttons">
+                <button class="suggestion-btn" id="generateSummary">
+                    Standard Meeting
+                </button>
+                <button class="suggestion-btn" id="extractKey">
+                    Project Update Meeting
+                </button>
+                <button class="suggestion-btn" id="translateSummary">
+                    Client Call Meeting
+                </button>
+
+                <div class="additional-buttons" id="additionalButtons">
+                    <button class="suggestion-btn">
+                        Sprint Planning Meeting
+                    </button>
+                    <button class="suggestion-btn">
+                        Brainstorming Session
+                    </button>
+                    <button class="suggestion-btn">Find Action Items</button>
+                </div>
+            </div>
+
+            <div class="show-more" id="showMore">Show more</div>
+
+            <div class="summary-container" id="summaryContainer">
+                <!-- <div class="summary-title">Summary</div> -->
+                <div class="summary-text" id="formattedSummary"></div>
+
+                <div class="more-actions">
+                    <!-- <button class="action-btn">Copy</button> -->
+                    <button class="action-btn">Download</button>
+                    <!-- <button class="action-btn">Share</button> -->
+                </div>
+            </div>
+
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="input-area">
+                    <input
+                        type="text"
+                        class="input-box"
+                        name="userPrompt"
+                        placeholder="Ask me anything..."
+                        id="questionInput"
+                    />
+                    <div class="footer">
+                        <div class="topics-btn" id="uploadBtn">
+                            <div class="topics-icon">+</div>
+                            Upload
+                        </div>
+                        <input
+                            type="file"
+                            id="fileInput"
+                            name="audio"
+                            class="file-input"
+                            accept="audio/mp3"
+                        />
+                        <button type="submit" class="upload-btn">↑</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <script src="/scripts/script.js"></script>
+        <script>
+            var summaryData = <%- JSON.stringify(summary) %>;
+        </script>
+        <script src="/scripts/summaryProcessor.js"></script>
+    </body>
+</html>
