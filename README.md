@@ -52,17 +52,6 @@
    - Use the provided form to upload your audio file.
    - After the file is uploaded, the application will process it using Google’s AI, generate a summary, and display it on the page.
 
-## Directory Structure
-
-ai-meet-summarizer/
-├── app.js              # Main server application
-├── prompts_full.json   # JSON file containing AI prompts
-├── package.json        # Node.js dependencies and scripts
-├── views/              # EJS templates for rendering the frontend
-│   └── index.ejs
-├── public/             # Static assets (CSS, JavaScript, images)
-└── uploads/            # Temporary folder for storing uploaded files
-
 ## Contributing
 
 Contributions are welcome! If you have ideas for new features, improvements, or bug fixes, please fork the repository and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
